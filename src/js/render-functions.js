@@ -16,6 +16,14 @@ export const renderToastOnSearchEmpty = (parentContainer) => {
   });
 };
 
+export const renderToastOnError = (parentContainer) => {
+  parentContainer.innerHTML = '';
+  iziToast.error({
+    message: 'Something went wrong. Please try again!',
+    position: 'topRight',
+  });
+};
+
 export const renderGallery = (parentContainer, images) => {
   parentContainer.innerHTML = images.map(renderImage).join('');
   simpleLightboxGallery.refresh();
